@@ -7,7 +7,7 @@ int quicksort(int x[], int lb,int ub)
   if(ub>lb)
   {
     quicksort(x,lb,key-1);
-    quicksort(x,d+1,ub);
+    quicksort(x,key+1,ub);
   }
   return 0;
 }
@@ -17,7 +17,7 @@ int partition(int x[], int lb,int ub)
   int down,up,temp;
   down=lb;
   up=ub;
-  pivot = x[lb];
+  int pivot = x[lb];
 
   while (1)
   {
@@ -36,10 +36,7 @@ int partition(int x[], int lb,int ub)
       x[down]=temp;
     }
     else
-    {
-      temp=x[up];
-      x[up]=pivot;
-      pivot=temp;
+    {    
       return up;
     }
   }
